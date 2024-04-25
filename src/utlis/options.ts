@@ -17,8 +17,8 @@ export function getOptions(
   if (_credentials || credentials) {
     if (credentials) _credentials = credentials;
     authMiddleware = createAuthForPasswordFlow({
-      //host: "https://auth.us-east-2.aws.commercetools.com",
-      host: process.env.CTP_AUTH_URL,
+      host: "https://auth.us-east-2.aws.commercetools.com",
+      //host: process.env.CTP_AUTH_URL,
       projectKey: process.env.CTP_PROJECT_KEY,
       credentials: {
         clientId: process.env.CTP_CLIENT_ID || '',
@@ -41,8 +41,8 @@ export function getOptions(
     });
   } else {
     authMiddleware = createAuthForAnonymousSessionFlow({
-      //host: "https://auth.us-east-2.aws.commercetools.com",
-      host: process.env.CTP_AUTH_URL,
+      host: "https://auth.us-east-2.aws.commercetools.com",
+      //host: process.env.CTP_AUTH_URL,
       projectKey: process.env.CTP_PROJECT_KEY || '',
       credentials: {
         clientId: process.env.CTP_CLIENT_ID || '',
@@ -58,7 +58,7 @@ export function getOptions(
     projectKey: process.env.CTP_PROJECT_KEY,
     credentials: _credentials ? true : false,
     httpMiddlewareOptions: {
-      host: process.env.CTP_AUTH_URL,
+      host: "https://api.us-east-2.aws.commercetools.com",
       fetch,
     },
   };
